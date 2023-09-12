@@ -1,0 +1,48 @@
+<!-- 첫 연습이라 아무런 설명도 없이 업데이트 함! -->
+<!-- 다음에는 좀 더 부연 설명 적을 것 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script>
+    const root = document.querySelector("#root");
+
+    const Title = (
+        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+            Hello I'm a title
+        </h3>
+    );
+
+    const Button =(<button style={{
+        color:"tomato"
+    }} onClick={() => console.log("I'm Clicked")}>
+    Click me
+    </button>
+    ); 
+    // const h3 = React.createElement(
+    //     "h3", 
+    //     {
+    //         onMouseEnter:()=>console.log("mouse enter")
+    //     }, 
+    //     "Hello I'm a span"
+    //     );
+
+    // const btn = React.createElement(
+    //     "button", 
+    //     {
+    //         style:{color:"tomato"},
+    //     onClick: () => console.log("I'm Clicked"),
+    //     }, 
+    //     "click me");
+    const container = React.createElement("div", null, [h3,btn]);
+    ReactDOM.render(container, root);
+</script>
+</html> 
